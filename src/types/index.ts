@@ -77,8 +77,8 @@ export interface SiteBranding {
 }
 
 export const DEFAULT_BRANDING: SiteBranding = {
-  brandName: 'VELOCITY MOTORS',
-  tagline: 'GLOBAL LUXURY & PERFORMANCE AUTOMOTIVE',
+  brandName: 'OMNIMOTORS 3D',
+  tagline: 'GLOBAL 3D AUTOMOTIVE PLATFORM & SHOWROOM',
   logoType: 'icon',
   logoIcon: 'shield',
   logoImageUrl: '',

@@ -234,9 +234,9 @@ export const CAR_TRANSLATIONS: Record<string, Record<Language, CarTranslation>> 
 export const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
   en: {
     // Brand & System
-    brandName: 'VELOCITY MOTORS',
-    brandTagline: 'GLOBAL LUXURY & PERFORMANCE AUTOMOTIVE',
-    taglineDefault: 'GLOBAL LUXURY & PERFORMANCE AUTOMOTIVE',
+    brandName: 'OMNIMOTORS 3D',
+    brandTagline: 'GLOBAL 3D AUTOMOTIVE PLATFORM & SHOWROOM',
+    taglineDefault: 'GLOBAL 3D AUTOMOTIVE PLATFORM & SHOWROOM',
     languageName: 'English',
     languageToggle: 'বাংলা',
     languageSelect: 'Language',
@@ -311,14 +311,14 @@ export const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
 
     // Footer
     footerBrandDesc:
-      'Velocity Motors is the premier global luxury automotive atelier. We engineer, curate, and customize the finest hyper-electric and internal-combustion collector vehicles for discerning connoisseurs worldwide.',
+      'OmniMotors 3D is the premier global automotive platform and digital showroom. We engineer, curate, and customize the finest hyper-electric and internal-combustion collector vehicles for discerning connoisseurs worldwide.',
     footerShowrooms: 'Global Atelier Showrooms',
     footerShowroomDubai: 'Dubai DIFC, United Arab Emirates',
     footerShowroomLondon: 'Mayfair, London, United Kingdom',
     footerShowroomDhaka: 'Gulshan-2 Diplomatic Zone, Dhaka, Bangladesh',
     footerShowroomTokyo: 'Ginza 6, Tokyo, Japan',
     footerShowroomLA: 'Beverly Hills, California, USA',
-    footerConciergeDesk: 'Concierge Desk: +1 (800) 555-APEX / vip@velocitymotors.com',
+    footerConciergeDesk: 'Concierge Desk: +1 (800) 555-OMNI / vip@omnimotors3d.com',
     footerQuickLinks: 'Bespoke Atelier',
     footerLegal: 'Private Governance',
     footerTerms: 'Terms of Allocation',
@@ -522,7 +522,7 @@ export const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
     guideBadge: 'COMPLETE SYSTEM MANUAL',
     guideTitle: 'User & Admin Operational Guidelines',
     guideSubtitle:
-      'Comprehensive manual covering every feature of the Velocity Motors platform: 3D customizer, sound simulation, virtual garage, financing, fleet inventory, and administrative control.',
+      'Comprehensive manual covering every feature of the OmniMotors 3D platform: 3D customizer, sound simulation, virtual garage, financing, fleet inventory, and administrative control.',
     guideTabUser: 'Customer & Client Guide',
     guideTabAdmin: 'Executive Admin Manual',
 
@@ -666,9 +666,9 @@ export const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
   },
   bn: {
     // Brand & System
-    brandName: 'ভেলোসিটি মোটরস',
-    brandTagline: 'গ্লোবাল লাক্সারি ও পারফরম্যান্স অটোমোটিভ শোরুম',
-    taglineDefault: 'গ্লোবাল লাক্সারি ও পারফরম্যান্স অটোমোটিভ শোরুম',
+    brandName: 'ওমনিমোটরস ৩ডি',
+    brandTagline: 'গ্লোবাল ৩ডি অটোমোটিভ প্ল্যাটফর্ম ও শোরুম',
+    taglineDefault: 'গ্লোবাল ৩ডি অটোমোটিভ প্ল্যাটফর্ম ও শোরুম',
     languageName: 'বাংলা',
     languageToggle: 'English',
     languageSelect: 'ভাষা পরিবর্তন',
@@ -743,20 +743,20 @@ export const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
 
     // Footer
     footerBrandDesc:
-      'ভেলোসিটি মোটরস বিশ্বের শীর্ষস্থানীয় লাক্সারি অটোমোটিভ শোরুম। আমরা বিশ্বজুড়ে সৌখিন ও উচ্চবিত্ত সংগ্রাহকদের জন্য হাইপার-ইলেকট্রিক ও প্রিমিয়াম সুপারকার সরবরাহ ও কাস্টমাইজেশন করে থাকি।',
+      'ওমনিমোটরস ৩ডি বিশ্বের শীর্ষস্থানীয় ডিজিটাল অটোমোটিভ প্ল্যাটফর্ম ও শোরুম। আমরা বিশ্বজুড়ে সৌখিন ও উচ্চবিত্ত সংগ্রাহকদের জন্য হাইপার-ইলেকট্রিক ও প্রিমিয়াম সুপারকার সরবরাহ ও কাস্টমাইজেশন করে থাকি।',
     footerShowrooms: 'বিশ্বব্যাপী অনুমোদিত শোরুমসমূহ',
     footerShowroomDubai: 'ডিআইএফসি (DIFC), দুবাই, সংযুক্ত আরব আমিরাত',
     footerShowroomLondon: 'মেফেয়ার, লন্ডন, যুক্তরাজ্য',
     footerShowroomDhaka: 'গুলশান-২ কূটনৈতিক অঞ্চল, ঢাকা, বাংলাদেশ',
     footerShowroomTokyo: 'গিনজা ৬, টোকিও, জাপান',
     footerShowroomLA: 'বেভারলি হিলস, ক্যালিফোর্নিয়া, যুক্তরাষ্ট্র',
-    footerConciergeDesk: 'কনসিয়ার্জ হটলাইন: +১ (৮০০) ৫৫৫-অ্যাপেক্স / vip@velocitymotors.com',
+    footerConciergeDesk: 'কনসিয়ার্জ হটলাইন: +১ (৮০০) ৫৫৫-OMNI / vip@omnimotors3d.com',
     footerQuickLinks: 'শোরুম ও কাস্টমাইজার',
     footerLegal: 'আইনি ও নীতিমালা',
     footerTerms: 'গাড়ি বরাদ্দের শর্তাবলী',
     footerPrivacy: 'গোপনীয়তা নীতিমালা',
     footerESG: 'পরিবেশবান্ধব কার্বন অফসেটিং',
-    footerAllRightsReserved: 'সর্বস্বত্ব সংরক্ষিত। ভেলোসিটি মোটরস লাক্সারি অটোমোটিভ।',
+    footerAllRightsReserved: 'সর্বস্বত্ব সংরক্ষিত। ওমনিমোটরস ৩ডি অটোমোটিভ প্ল্যাটফর্ম।',
     footerSystemStatus: 'সকল ৩ডি শেডার ও কনসিয়ার্জ সিস্টেম সম্পূর্ণ সচল',
 
     // 3D Customizer Page
@@ -954,7 +954,7 @@ export const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
     guideBadge: 'ওয়েবসাইটের সম্পূর্ণ নির্দেশিকা',
     guideTitle: 'ইউজার ও অ্যাডমিন পরিচালনা নির্দেশিকা',
     guideSubtitle:
-      'ভেলোসিটি মোটরস প্ল্যাটফর্মের প্রতিটি ফিচার বিস্তারিত জানার জন্য অফিসিয়াল গাইডলাইন: ৩ডি কাস্টমাইজার, ইঞ্জিন সাউন্ড সিমুলেটর, ভার্চুয়াল গ্যারেজ, ইএমআই ক্যালকুলেটর, টেস্ট ড্রাইভ এবং অ্যাডমিন কন্ট্রোল।',
+      'ওমনিমোটরস ৩ডি প্ল্যাটফর্মের প্রতিটি ফিচার বিস্তারিত জানার জন্য অফিসিয়াল গাইডলাইন: ৩ডি কাস্টমাইজার, ইঞ্জিন সাউন্ড সিমুলেটর, ভার্চুয়াল গ্যারেজ, ইএমআই ক্যালকুলেটর, টেস্ট ড্রাইভ এবং অ্যাডমিন কন্ট্রোল।',
     guideTabUser: 'কাস্টমার ও ইউজার গাইডলাইন',
     guideTabAdmin: 'এক্সিকিউটিভ অ্যাডমিন ম্যানুয়াল',
 

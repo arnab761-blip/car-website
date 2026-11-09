@@ -14,7 +14,7 @@ export function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const words = (isBn ? 'ভেলোসিটি মোটরস' : (branding?.brandName || 'VELOCITY MOTORS')).split(' ');
+  const words = (isBn ? 'ওমনিমোটরস ৩ডি' : (branding?.brandName || 'OMNIMOTORS 3D')).split(' ');
   const firstWord = words[0];
   const restWords = words.slice(1).join(' ');
 

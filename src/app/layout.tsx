@@ -17,12 +17,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'VELOCITY MOTORS | Global Luxury & Electric Automotive Showroom',
+  title: 'OmniMotors 3D | Global 3D Automotive Platform & Interactive Showroom',
   description:
     'Discover and customize your dream vehicle. Global next-generation 3D car showroom with real-time custom paint formulation, technical aerodynamic telemetry, curated marketplace, and VIP test drive booking.',
   keywords: [
     'Car Dealership',
-    'Velocity Motors',
+    'OmniMotors',
+    'OmniMotors 3D',
     'Hypercar',
     'Luxury Cars',
     '3D Car Customizer',

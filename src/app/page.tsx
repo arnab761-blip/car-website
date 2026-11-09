@@ -85,8 +85,8 @@ export default function HomePage() {
               </span>
               <span className="text-xs font-mono uppercase tracking-widest text-cyan-300 font-semibold">
                 {isBn
-                  ? 'ভেলোসিটি মোটরস • ৩ডি হাইপারকার ভার্চুয়াল শোরুম'
-                  : 'VELOCITY MOTORS • REALISTIC 3D HYPERCAR EXPERIENCE'}
+                  ? 'ওমনিমোটরস ৩ডি • ভার্চুয়াল কার শোরুম ও সিমুলেটর'
+                  : 'OMNIMOTORS 3D • NEXT-GEN AUTOMOTIVE EXPERIENCE'}
               </span>
             </motion.div>
           </div>
