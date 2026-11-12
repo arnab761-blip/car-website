@@ -302,26 +302,26 @@ function CustomizerContent() {
     <div className="min-h-screen bg-transparent text-white flex flex-col justify-between">
       <Navbar />
 
-      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 pb-20">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-3 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-12 sm:pb-20">
         {/* Header */}
-        <div className="pb-6 border-b border-white/10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div className="pb-4 sm:pb-6 border-b border-white/10 flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono uppercase tracking-widest mb-2 sm:mb-3">
               <Sliders className="w-3.5 h-3.5" />
               <span>{t('customizerBadge', 'Multi-Zone 3D Atelier')}</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+            <h1 className="text-2xl sm:text-5xl font-black text-white tracking-tight">
               {t('customizerTitle', '3D Customizer Studio')}
             </h1>
-            <p className="mt-2 text-neutral-400 text-sm sm:text-base max-w-xl">
+            <p className="mt-1.5 sm:mt-2 text-neutral-400 text-xs sm:text-base max-w-xl">
               {t('customizerSubtitle', 'Rotate 360° in real time. Formulate custom lacquer body paint, alloy rims, racing calipers, handcrafted interior leather, aero trims, and laser optics.')}
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <button
               onClick={handleResetToFactory}
-              className="px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+              className="px-3 py-2 sm:px-4 sm:py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span>{t('customizerFactorySpec', 'Factory Spec')}</span>
@@ -329,7 +329,7 @@ function CustomizerContent() {
 
             <button
               onClick={handleSaveToGarage}
-              className={`px-4 py-3 rounded-xl border text-xs font-mono uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer shadow-lg ${
+              className={`px-3 py-2 sm:px-4 sm:py-3 rounded-xl border text-xs font-mono uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer shadow-lg ${
                 isSavedInGarage
                   ? 'bg-amber-500/15 border-amber-500/40 text-amber-300 hover:bg-amber-500/25 shadow-amber-500/10'
                   : 'bg-cyan-500/10 hover:bg-cyan-500/20 border-cyan-500/30 text-cyan-300 hover:text-white shadow-cyan-500/10'
@@ -350,7 +350,7 @@ function CustomizerContent() {
 
             <Link
               href={`/test-drive?car=${encodeURIComponent(configuredSpecSummary)}`}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-cyan-500/25 transition-all"
+              className="px-4 py-2 sm:px-6 sm:py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-cyan-500/25 transition-all"
             >
               <span>{t('customizerOrderSpec', 'Order Configured Spec')}</span>
               <ArrowRight className="w-4 h-4" />
@@ -359,7 +359,7 @@ function CustomizerContent() {
         </div>
 
         {/* ================= INVENTORY VEHICLE SELECTOR CAROUSEL ================= */}
-        <div className="my-6">
+        <div className="my-3 sm:my-6">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 flex items-center gap-2">
               <Car className="w-4 h-4 text-cyan-400" />
@@ -411,9 +411,9 @@ function CustomizerContent() {
         </div>
 
         {/* ================= 3D STAGE & MULTI-ZONE CUSTOMIZER ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-6 lg:gap-8 items-start">
           {/* Main 3D Canvas with 360 Orbit Controls - STICKY PINNED ON MOBILE FOR LIVE SYNCHRONOUS PREVIEWS */}
-          <div className="order-1 lg:col-span-7 xl:col-span-8 lg:row-start-1 sticky top-16 z-30 lg:static bg-[#070910]/95 lg:bg-transparent -mx-4 px-4 sm:mx-0 sm:px-0 py-2 lg:py-0 backdrop-blur-2xl lg:backdrop-blur-none border-b border-white/10 lg:border-none shadow-2xl lg:shadow-none">
+          <div className="order-1 lg:col-span-7 xl:col-span-8 lg:row-start-1 sticky top-16 z-30 lg:static bg-[#070910]/95 lg:bg-transparent -mx-4 px-4 sm:mx-0 sm:px-0 py-1.5 lg:py-0 backdrop-blur-2xl lg:backdrop-blur-none border-b border-white/10 lg:border-none shadow-2xl lg:shadow-none">
             <Interactive3DViewer
               key={activeModelUrl}
               modelUrl={activeModelUrl}
@@ -429,13 +429,13 @@ function CustomizerContent() {
               onHeadlightsChange={setHeadlightsOn}
               environmentPreset={environmentPreset}
               onEnvironmentChange={setEnvironmentPreset}
-              heightClass="h-[300px] xs:h-[340px] sm:h-[440px] lg:h-[600px] xl:h-[640px] w-full"
+              heightClass="h-[270px] xs:h-[300px] sm:h-[400px] lg:h-[600px] xl:h-[640px] w-full"
               cameraPosition={[3.8, 1.5, 4.6]}
             />
           </div>
 
           {/* Right Control Suite with Multi-Zone Tabs - POSITIONED DIRECTLY UNDER 3D VIEWER ON MOBILE */}
-          <div className="order-2 lg:col-span-5 xl:col-span-4 lg:row-start-1 lg:row-span-2 lg:sticky lg:top-24 bg-[#0a0c13]/85 border border-white/15 rounded-3xl p-5 sm:p-6 backdrop-blur-2xl shadow-2xl space-y-5">
+          <div className="order-2 lg:col-span-5 xl:col-span-4 lg:row-start-1 lg:row-span-2 lg:sticky lg:top-24 bg-[#0a0c13]/85 border border-white/15 rounded-3xl p-3.5 sm:p-6 backdrop-blur-2xl shadow-2xl space-y-4 sm:space-y-5">
             {/* Multi-Zone Navigation Tabs */}
             <div className="grid grid-cols-5 gap-1 p-1 bg-black/50 border border-white/10 rounded-2xl">
               <button
