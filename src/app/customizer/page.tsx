@@ -411,9 +411,9 @@ function CustomizerContent() {
         </div>
 
         {/* ================= 3D STAGE & MULTI-ZONE CUSTOMIZER ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Main 3D Canvas with 360 Orbit Controls */}
-          <div className="lg:col-span-7 xl:col-span-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+          {/* Main 3D Canvas with 360 Orbit Controls - STICKY PINNED ON MOBILE FOR LIVE SYNCHRONOUS PREVIEWS */}
+          <div className="order-1 lg:col-span-7 xl:col-span-8 lg:row-start-1 sticky top-16 z-30 lg:static bg-[#070910]/95 lg:bg-transparent -mx-4 px-4 sm:mx-0 sm:px-0 py-2 lg:py-0 backdrop-blur-2xl lg:backdrop-blur-none border-b border-white/10 lg:border-none shadow-2xl lg:shadow-none">
             <Interactive3DViewer
               key={activeModelUrl}
               modelUrl={activeModelUrl}
@@ -429,94 +429,13 @@ function CustomizerContent() {
               onHeadlightsChange={setHeadlightsOn}
               environmentPreset={environmentPreset}
               onEnvironmentChange={setEnvironmentPreset}
-              heightClass="h-[560px] sm:h-[640px] w-full"
+              heightClass="h-[300px] xs:h-[340px] sm:h-[440px] lg:h-[600px] xl:h-[640px] w-full"
               cameraPosition={[3.8, 1.5, 4.6]}
             />
-
-            {/* Live Spec Badges Bar */}
-            <div className="mt-4 flex flex-wrap items-center gap-2 p-3 rounded-2xl bg-[#090b10]/75 border border-white/10 backdrop-blur-md text-[11px] font-mono">
-              <span className="text-neutral-500 uppercase mr-1">{t('customizerActiveSpec', 'Active Spec')}:</span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-white">
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: currentColor.hex }} />
-                <span>{currentColor.name} ({currentFinish})</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-white">
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: currentRim.hex }} />
-                <span>{currentRim.name}</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-white">
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: currentCaliper.hex }} />
-                <span>{currentCaliper.name} Caliper</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-white">
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: currentInterior.hex }} />
-                <span>{currentInterior.name}</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-300">
-                <Lightbulb className="w-3 h-3" />
-                <span>{currentHeadlight.name}</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300">
-                <Sparkles className="w-3 h-3" />
-                <span>{ENVIRONMENT_PRESETS.find((p) => p.id === environmentPreset)?.label || 'Studio'} HDRI</span>
-              </span>
-            </div>
-
-            {/* Selected Car Performance Telemetry bar */}
-            <div className="mt-4 bg-[#0a0c13]/75 border border-white/10 rounded-3xl p-5 backdrop-blur-xl shadow-xl">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10 mb-4">
-                <div>
-                  <span className="text-[10px] font-mono uppercase text-cyan-400">
-                    {t('customizerActiveMachineSpecs', 'Active Machine Specifications')}
-                  </span>
-                  <h3 className="text-xl font-black text-white font-sans">
-                    {getTranslatedCar(activeCar).name}
-                  </h3>
-                </div>
-                <div className="text-right sm:text-right">
-                  <span className="text-[10px] font-mono uppercase text-neutral-400 block">
-                    {t('customizerBasePrice', 'Base Acquisition Valuation')}
-                  </span>
-                  <span className="text-lg font-bold font-mono text-cyan-300">
-                    {isBn ? toBnDigits(activeCar.formattedPrice) : activeCar.formattedPrice}
-                  </span>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
-                <div className="bg-white/[0.02] border border-white/5 p-3 rounded-xl">
-                  <span className="text-neutral-500 uppercase block text-[10px]">{t('customizerPowerHp', 'Power')}</span>
-                  <span className="text-white font-bold text-sm mt-0.5 block">
-                    {isBn ? toBnDigits(activeCar.specs.horsepower) : activeCar.specs.horsepower} HP
-                  </span>
-                </div>
-
-                <div className="bg-white/[0.02] border border-white/5 p-3 rounded-xl">
-                  <span className="text-neutral-500 uppercase block text-[10px]">{t('customizerTelemetry060', '0-60 MPH')}</span>
-                  <span className="text-cyan-400 font-bold text-sm mt-0.5 block">
-                    {isBn ? toBnDigits(activeCar.specs.zeroToSixty) : activeCar.specs.zeroToSixty}
-                  </span>
-                </div>
-
-                <div className="bg-white/[0.02] border border-white/5 p-3 rounded-xl">
-                  <span className="text-neutral-500 uppercase block text-[10px]">{t('customizerTopSpeedLabel', 'Top Speed')}</span>
-                  <span className="text-white font-bold text-sm mt-0.5 block">
-                    {isBn ? toBnDigits(activeCar.specs.topSpeed) : activeCar.specs.topSpeed}
-                  </span>
-                </div>
-
-                <div className="bg-white/[0.02] border border-white/5 p-3 rounded-xl">
-                  <span className="text-neutral-500 uppercase block text-[10px]">{t('customizerAeroDragLabel', 'Aero Drag')}</span>
-                  <span className="text-white font-bold text-sm mt-0.5 block">
-                    {isBn ? toBnDigits(activeCar.specs.dragCoefficient) : activeCar.specs.dragCoefficient}
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Right Control Suite with Multi-Zone Tabs */}
-          <div className="lg:col-span-5 xl:col-span-4 bg-[#0a0c13]/85 border border-white/15 rounded-3xl p-5 sm:p-6 backdrop-blur-2xl shadow-2xl space-y-5">
+          {/* Right Control Suite with Multi-Zone Tabs - POSITIONED DIRECTLY UNDER 3D VIEWER ON MOBILE */}
+          <div className="order-2 lg:col-span-5 xl:col-span-4 lg:row-start-1 lg:row-span-2 lg:sticky lg:top-24 bg-[#0a0c13]/85 border border-white/15 rounded-3xl p-5 sm:p-6 backdrop-blur-2xl shadow-2xl space-y-5">
             {/* Multi-Zone Navigation Tabs */}
             <div className="grid grid-cols-5 gap-1 p-1 bg-black/50 border border-white/10 rounded-2xl">
               <button
@@ -1067,6 +986,90 @@ function CustomizerContent() {
                 <span>{t('customizerReserveSpecBtn', 'Reserve Spec')} ({getTranslatedCar(activeCar).name})</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
+            </div>
+          </div>
+
+          {/* Performance Telemetry & Spec Badges Bar - POSITIONED BELOW CONTROLS ON MOBILE, UNDER 3D CANVAS ON DESKTOP */}
+          <div className="order-3 lg:col-span-7 xl:col-span-8 lg:row-start-2 space-y-4">
+            {/* Live Spec Badges Bar */}
+            <div className="flex flex-wrap items-center gap-2 p-3 rounded-2xl bg-[#090b10]/75 border border-white/10 backdrop-blur-md text-[11px] font-mono">
+              <span className="text-neutral-500 uppercase mr-1">{t('customizerActiveSpec', 'Active Spec')}:</span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-white">
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: currentColor.hex }} />
+                <span>{currentColor.name} ({currentFinish})</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-white">
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: currentRim.hex }} />
+                <span>{currentRim.name}</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-white">
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: currentCaliper.hex }} />
+                <span>{currentCaliper.name} Caliper</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-white">
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: currentInterior.hex }} />
+                <span>{currentInterior.name}</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-300">
+                <Lightbulb className="w-3 h-3" />
+                <span>{currentHeadlight.name}</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-300">
+                <Sparkles className="w-3 h-3" />
+                <span>{ENVIRONMENT_PRESETS.find((p) => p.id === environmentPreset)?.label || 'Studio'} HDRI</span>
+              </span>
+            </div>
+
+            {/* Selected Car Performance Telemetry bar */}
+            <div className="bg-[#0a0c13]/75 border border-white/10 rounded-3xl p-5 backdrop-blur-xl shadow-xl">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-white/10 mb-4">
+                <div>
+                  <span className="text-[10px] font-mono uppercase text-cyan-400">
+                    {t('customizerActiveMachineSpecs', 'Active Machine Specifications')}
+                  </span>
+                  <h3 className="text-xl font-black text-white font-sans">
+                    {getTranslatedCar(activeCar).name}
+                  </h3>
+                </div>
+                <div className="text-right sm:text-right">
+                  <span className="text-[10px] font-mono uppercase text-neutral-400 block">
+                    {t('customizerBasePrice', 'Base Acquisition Valuation')}
+                  </span>
+                  <span className="text-lg font-bold font-mono text-cyan-300">
+                    {isBn ? toBnDigits(activeCar.formattedPrice) : activeCar.formattedPrice}
+                  </span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
+                <div className="bg-white/[0.02] border border-white/5 p-3 rounded-xl">
+                  <span className="text-neutral-500 uppercase block text-[10px]">{t('customizerPowerHp', 'Power')}</span>
+                  <span className="text-white font-bold text-sm mt-0.5 block">
+                    {isBn ? toBnDigits(activeCar.specs.horsepower) : activeCar.specs.horsepower} HP
+                  </span>
+                </div>
+
+                <div className="bg-white/[0.02] border border-white/5 p-3 rounded-xl">
+                  <span className="text-neutral-500 uppercase block text-[10px]">{t('customizerTelemetry060', '0-60 MPH')}</span>
+                  <span className="text-cyan-400 font-bold text-sm mt-0.5 block">
+                    {isBn ? toBnDigits(activeCar.specs.zeroToSixty) : activeCar.specs.zeroToSixty}
+                  </span>
+                </div>
+
+                <div className="bg-white/[0.02] border border-white/5 p-3 rounded-xl">
+                  <span className="text-neutral-500 uppercase block text-[10px]">{t('customizerTopSpeedLabel', 'Top Speed')}</span>
+                  <span className="text-white font-bold text-sm mt-0.5 block">
+                    {isBn ? toBnDigits(activeCar.specs.topSpeed) : activeCar.specs.topSpeed}
+                  </span>
+                </div>
+
+                <div className="bg-white/[0.02] border border-white/5 p-3 rounded-xl">
+                  <span className="text-neutral-500 uppercase block text-[10px]">{t('customizerAeroDragLabel', 'Aero Drag')}</span>
+                  <span className="text-white font-bold text-sm mt-0.5 block">
+                    {isBn ? toBnDigits(activeCar.specs.dragCoefficient) : activeCar.specs.dragCoefficient}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

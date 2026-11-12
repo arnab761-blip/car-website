@@ -659,46 +659,46 @@ export function Interactive3DViewer({
       </div>
 
       {/* ================= BOTTOM STATUS & CAMERA ANGLE BAR ================= */}
-      <div className="w-full shrink-0 border-t border-white/10 bg-black/40 backdrop-blur-xl px-3 sm:px-4 py-2 flex items-center justify-between z-10 text-xs font-mono select-none">
+      <div className="w-full shrink-0 border-t border-white/10 bg-black/40 backdrop-blur-xl px-2 sm:px-4 py-1.5 sm:py-2 flex items-center justify-between z-10 text-xs font-mono select-none overflow-x-auto scrollbar-none gap-2">
         {/* 360 Degree Drag / Zoom Hint */}
-        <div className="flex items-center gap-2 text-cyan-400">
-          <RotateCw className="w-3.5 h-3.5 animate-spin-slow shrink-0" />
+        <div className="flex items-center gap-1.5 text-cyan-400 shrink-0">
+          <RotateCw className="w-3 h-3 sm:w-3.5 sm:h-3.5 animate-spin-slow shrink-0" />
           <span className="hidden sm:inline text-[11px] text-cyan-300">
             360° Turntable Active • Drag to Rotate • Scroll to Zoom
           </span>
-          <span className="sm:hidden text-[10px] text-cyan-300">
-            360° Turntable • Drag to Rotate
+          <span className="sm:hidden text-[9px] text-cyan-300 font-semibold">
+            360° Drag
           </span>
         </div>
 
         {/* Quick Camera Preset Buttons */}
-        <div className="flex items-center gap-1 sm:gap-1.5 p-0.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md">
+        <div className="flex items-center gap-0.5 sm:gap-1.5 p-0.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md shrink-0">
           <span className="hidden md:inline px-1.5 text-[9px] uppercase tracking-wider text-neutral-400 font-semibold">
             Angle:
           </span>
           <button
             onClick={() => resetCamera([0, 1.2, 5.2])}
-            className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[10px] uppercase font-bold text-neutral-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            className="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[9px] sm:text-[10px] uppercase font-bold text-neutral-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
           >
             Front
           </button>
           <button
             onClick={() => resetCamera([4.8, 1.0, 0])}
-            className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[10px] uppercase font-bold text-neutral-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            className="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[9px] sm:text-[10px] uppercase font-bold text-neutral-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
           >
             Side
           </button>
           <button
             onClick={() => resetCamera([-3.2, 1.2, -4.2])}
-            className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[10px] uppercase font-bold text-neutral-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            className="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[9px] sm:text-[10px] uppercase font-bold text-neutral-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
           >
             Rear
           </button>
           <button
             onClick={() => resetCamera([0, 5.2, 0.1])}
-            className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[10px] uppercase font-bold text-neutral-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            className="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[9px] sm:text-[10px] uppercase font-bold text-neutral-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
           >
-            Top Aero
+            Top
           </button>
         </div>
       </div>
