@@ -158,7 +158,7 @@ export default function InventoryPage() {
               >
                 <div>
                   {/* Image */}
-                  <Link href={`/inventory/${car.id}`} className="block relative aspect-[16/10] w-full overflow-hidden bg-neutral-900">
+                  <Link href={`/inventory/detail?id=${car.id}`} className="block relative aspect-[16/10] w-full overflow-hidden bg-neutral-900">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={car.image}
@@ -192,7 +192,7 @@ export default function InventoryPage() {
 
                   {/* Info */}
                   <div className="p-6">
-                    <Link href={`/inventory/${car.id}`}>
+                    <Link href={`/inventory/detail?id=${car.id}`}>
                       <h2 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
                         {translatedCar.name}
                       </h2>
@@ -258,7 +258,7 @@ export default function InventoryPage() {
                     </Link>
 
                     <Link
-                      href={`/inventory/${car.id}`}
+                      href={`/inventory/detail?id=${car.id}`}
                       className="px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-xs font-semibold uppercase tracking-wider shadow-md shadow-cyan-500/20 transition-all flex items-center gap-1.5"
                     >
                       <span>{t('inventoryViewDetails', 'Details')}</span>

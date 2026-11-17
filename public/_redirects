@@ -1,0 +1,3 @@
+# Cloudflare Pages Redirects & Rewrites
+# Forward unmatched dynamic vehicle inventory requests to static detail viewer
+/inventory/*  /inventory/detail?id=:splat  200

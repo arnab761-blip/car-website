@@ -35,7 +35,7 @@ import { formatBDT, DEFAULT_USD_TO_BDT_RATE } from '@/lib/financeUtils';
 
 export function CarDetailClient({ id }: { id: string }) {
   const { t, isBn, toBnDigits, getTranslatedCar, formatPrice } = useLanguage();
-  const { getCarById, featuredModelUrl } = useCars();
+  const { getCarById, featuredModelUrl, isLoaded } = useCars();
   const rawCar = getCarById(id);
   const car = rawCar ? getTranslatedCar(rawCar) : null;
   const { saveCar, isInGarage } = useGarage();
@@ -86,20 +86,39 @@ export function CarDetailClient({ id }: { id: string }) {
   };
 
   if (!car) {
+    if (!isLoaded) {
+      return (
+        <div className="min-h-screen bg-[#06070a] text-cyan-400 flex flex-col justify-between">
+          <Navbar />
+          <main className="flex-1 max-w-7xl mx-auto w-full px-4 pt-40 pb-20 text-center flex flex-col items-center justify-center">
+            <div className="w-10 h-10 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin mb-4" />
+            <p className="font-mono text-xs uppercase tracking-widest text-cyan-400">
+              {isBn ? 'গাড়ির স্পেসিফিকেশন ও ৩ডি মডেল লোড হচ্ছে...' : 'Initializing 3D Machine Architecture...'}
+            </p>
+          </main>
+          <Footer />
+        </div>
+      );
+    }
+
     return (
       <div className="min-h-screen bg-transparent text-white flex flex-col justify-between">
         <Navbar />
         <main className="flex-1 max-w-7xl mx-auto w-full px-4 pt-40 pb-20 text-center">
-          <h1 className="text-3xl font-bold">Vehicle Allocation Not Found</h1>
+          <h1 className="text-3xl font-bold">
+            {isBn ? 'গাড়ির তথ্য পাওয়া যায়নি' : 'Vehicle Allocation Not Found'}
+          </h1>
           <p className="text-neutral-400 mt-2 text-sm">
-            The requested machine reference could not be located in our current vault.
+            {isBn
+              ? 'অনুরোধকৃত গাড়িটি আমাদের শো-রুমে খুঁজে পাওয়া যায়নি।'
+              : 'The requested machine reference could not be located in our current vault.'}
           </p>
           <Link
             href="/inventory"
             className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-xl bg-cyan-500 text-black text-xs font-bold uppercase tracking-wider"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Return to Inventory</span>
+            <span>{isBn ? 'ইনভেন্টরিতে ফিরে যান' : 'Return to Inventory'}</span>
           </Link>
         </main>
         <Footer />
@@ -628,7 +647,7 @@ export function CarDetailClient({ id }: { id: string }) {
               {t('detailStandardFeatures', 'Included Bespoke Appointments')}
             </h2>
             <div className="space-y-2.5">
-              {car.features.map((feat, i) => (
+              {(car.features || []).map((feat, i) => (
                 <div key={i} className="flex items-center gap-2.5 text-xs text-neutral-300">
                   <CheckCircle className="w-4 h-4 text-cyan-400 shrink-0" />
                   <span>{feat}</span>

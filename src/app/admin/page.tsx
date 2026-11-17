@@ -799,7 +799,7 @@ export default function AdminPage() {
                         <td className="py-4 px-6 text-right">
                           <div className="flex items-center justify-end gap-2">
                             <Link
-                              href={`/inventory/${car.id}`}
+                              href={`/inventory/detail?id=${car.id}`}
                               className="p-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-neutral-300 hover:text-white"
                               title="View Dedicated Page"
                             >

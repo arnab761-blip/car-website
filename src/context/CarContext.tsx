@@ -55,6 +55,9 @@ interface CarContextType {
   // Bookings
   bookings: StoredBooking[];
   addBooking: (booking: TestDriveBooking) => string;
+
+  // Hydration state
+  isLoaded: boolean;
 }
 
 const CarContext = createContext<CarContextType | undefined>(undefined);
@@ -340,6 +343,7 @@ export function CarProvider({ children }: { children: React.ReactNode }) {
         userLogs,
         bookings,
         addBooking,
+        isLoaded,
       }}
     >
       {children}

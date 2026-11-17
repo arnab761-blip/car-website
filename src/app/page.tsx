@@ -195,7 +195,7 @@ export default function HomePage() {
                 return (
                   <Link
                     key={car.id}
-                    href={`/inventory/${car.id}`}
+                    href={`/inventory/detail?id=${car.id}`}
                     className="group relative bg-[#090b10]/95 md:bg-[#090b10]/80 md:backdrop-blur-xl border border-white/10 hover:border-cyan-500/40 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
                   >
                     <div>
