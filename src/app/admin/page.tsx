@@ -4,9 +4,10 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useCars } from '@/context/CarContext';
-import { InventoryCar, SiteBranding } from '@/types';
+import { InventoryCar, SiteBranding, POPULAR_BANGLADESH_CATEGORIES, BANGLADESH_POPULAR_MODELS } from '@/types';
 import { convertGoogleDriveUrl } from '@/lib/drive';
 import { AVAILABLE_3D_MODELS } from '@/data/cars';
+import { DEFAULT_USD_TO_BDT_RATE, formatBDT } from '@/lib/financeUtils';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import {
@@ -70,13 +71,13 @@ export default function AdminPage() {
   const [carForm, setCarForm] = useState({
     name: '',
     tagline: '',
-    category: 'Hypercar' as 'Hypercar' | 'Electric GT' | 'Luxury SUV' | 'Track Series',
-    price: 1500000,
-    formattedPrice: '$1,500,000',
-    year: 2026,
+    category: 'Luxury SUV',
+    price: 145000,
+    formattedPrice: '$145,000',
+    year: 2025,
     status: 'In Stock' as 'In Stock' | 'Rare Spec' | 'Arriving Soon' | 'Custom Order',
     image: '',
-    model3dUrl: '/models/car.glb',
+    model3dUrl: '/models/chevy-suv.glb',
     horsepower: 1000,
     zeroToSixty: '2.0s',
     topSpeed: '240 mph',
@@ -455,45 +456,103 @@ export default function AdminPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div>
                     <label className="block text-[11px] font-mono uppercase text-neutral-400 mb-1">
-                      Model / Machine Name *
+                      {isBn ? 'মডেল / গাড়ির নাম *' : 'Model / Machine Name *'}
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Apex Hyperion GT"
+                      list="bd-popular-models-list"
+                      placeholder={isBn ? 'যেমন: Toyota Prado TX-L' : 'e.g. Toyota Land Cruiser Prado TX-L'}
                       value={carForm.name}
                       onChange={(e) => setCarForm({ ...carForm, name: e.target.value })}
-                      className="w-full bg-white/[0.04] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500"
+                      className="w-full bg-white/[0.04] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500 font-sans"
                     />
+                    <datalist id="bd-popular-models-list">
+                      {BANGLADESH_POPULAR_MODELS.map((m) => (
+                        <option key={m} value={m} />
+                      ))}
+                    </datalist>
                   </div>
 
                   <div>
                     <label className="block text-[11px] font-mono uppercase text-neutral-400 mb-1">
-                      Category *
+                      {isBn ? 'ক্যাটাগরি *' : 'Category *'}
                     </label>
                     <select
                       value={carForm.category}
-                      onChange={(e) => setCarForm({ ...carForm, category: e.target.value as any })}
-                      className="w-full bg-[#0e111a] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500"
+                      onChange={(e) => setCarForm({ ...carForm, category: e.target.value })}
+                      className="w-full bg-[#0e111a] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500 font-sans"
                     >
-                      <option value="Hypercar">Hypercar</option>
-                      <option value="Electric GT">Electric GT</option>
-                      <option value="Luxury SUV">Luxury SUV</option>
-                      <option value="Track Series">Track Series</option>
+                      {POPULAR_BANGLADESH_CATEGORIES.map((cat) => (
+                        <option key={cat.id} value={cat.id}>
+                          {isBn ? `${cat.nameBn} - ${cat.modelsDescription}` : `${cat.nameEn} - ${cat.modelsDescription}`}
+                        </option>
+                      ))}
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-mono uppercase text-neutral-400 mb-1">
-                      Price (USD) *
-                    </label>
-                    <input
-                      type="number"
-                      required
-                      value={carForm.price}
-                      onChange={(e) => setCarForm({ ...carForm, price: Number(e.target.value) })}
-                      className="w-full bg-white/[0.04] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-500"
-                    />
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="block text-[11px] font-mono uppercase text-neutral-400">
+                        {isBn ? 'মূল্য (USD ও BDT ৳) *' : 'Price (USD $ & BDT ৳) *'}
+                      </label>
+                      <span className="text-[10px] font-mono text-cyan-400">
+                        1$ ≈ {DEFAULT_USD_TO_BDT_RATE}৳
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="relative">
+                        <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-xs font-mono text-neutral-400">$</span>
+                        <input
+                          type="number"
+                          required
+                          min={1}
+                          placeholder="USD ($)"
+                          value={carForm.price || ''}
+                          onChange={(e) => {
+                            const usdVal = Number(e.target.value);
+                            setCarForm({
+                              ...carForm,
+                              price: usdVal,
+                              formattedPrice: `$${usdVal.toLocaleString()}`,
+                            });
+                          }}
+                          className="w-full bg-white/[0.04] border border-white/10 rounded-xl pl-6 pr-2 py-2 text-xs text-white focus:outline-none focus:border-cyan-500 font-mono"
+                          title="Price in US Dollars"
+                        />
+                      </div>
+                      <div className="relative">
+                        <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-xs font-mono text-amber-400 font-bold">৳</span>
+                        <input
+                          type="number"
+                          min={1}
+                          placeholder="BDT (৳)"
+                          value={carForm.price ? Math.round(carForm.price * DEFAULT_USD_TO_BDT_RATE) : ''}
+                          onChange={(e) => {
+                            const bdtVal = Number(e.target.value);
+                            const usdVal = Math.round(bdtVal / DEFAULT_USD_TO_BDT_RATE);
+                            setCarForm({
+                              ...carForm,
+                              price: usdVal,
+                              formattedPrice: `$${usdVal.toLocaleString()}`,
+                            });
+                          }}
+                          className="w-full bg-white/[0.04] border border-amber-500/30 rounded-xl pl-6 pr-2 py-2 text-xs text-amber-300 focus:outline-none focus:border-amber-400 font-mono"
+                          title="Price in Bangladeshi Taka"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between text-[10px] font-mono mt-1 text-neutral-400">
+                      <span>
+                        BDT:{' '}
+                        <strong className="text-amber-400">
+                          ৳{(carForm.price * DEFAULT_USD_TO_BDT_RATE).toLocaleString()}
+                        </strong>
+                      </span>
+                      <span className="text-cyan-400">
+                        ({formatBDT(carForm.price, DEFAULT_USD_TO_BDT_RATE, true)})
+                      </span>
+                    </div>
                   </div>
 
                   <div>
@@ -691,7 +750,7 @@ export default function AdminPage() {
                       <th className="py-4 px-6">Vehicle</th>
                       <th className="py-4 px-4">Category</th>
                       <th className="py-4 px-4">Power & 0-60</th>
-                      <th className="py-4 px-4">Price</th>
+                      <th className="py-4 px-4">{isBn ? 'মূল্য (USD / BDT ৳)' : 'Price (USD / BDT ৳)'}</th>
                       <th className="py-4 px-4">Status</th>
                       <th className="py-4 px-6 text-right">Actions</th>
                     </tr>
@@ -724,8 +783,11 @@ export default function AdminPage() {
                           {car.specs?.horsepower ?? 1000} HP • {car.specs?.zeroToSixty ?? '2.0s'}
                         </td>
 
-                        <td className="py-4 px-4 font-mono text-cyan-300 font-bold">
-                          {car.formattedPrice}
+                        <td className="py-4 px-4 font-mono">
+                          <span className="text-cyan-300 font-bold block">{car.formattedPrice}</span>
+                          <span className="text-[11px] text-amber-400 block font-sans">
+                            ≈ {formatBDT(car.price, DEFAULT_USD_TO_BDT_RATE, true)}
+                          </span>
                         </td>
 
                         <td className="py-4 px-4">

@@ -97,7 +97,14 @@ export function CarProvider({ children }: { children: React.ReactNode }) {
             model3dUrl: car.model3dUrl || '/models/car.glb',
           };
         });
-        setCars(updated);
+
+        // Also ensure any newly introduced default fleet cars are present
+        const missingDefaults = INVENTORY_CARS.filter(
+          (defaultCar) => !updated.some((c: InventoryCar) => c.id === defaultCar.id)
+        );
+        setCars([...updated, ...missingDefaults]);
+      } else {
+        setCars(INVENTORY_CARS);
       }
 
       const storedModel = localStorage.getItem('apex_featured_model');

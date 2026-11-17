@@ -266,7 +266,7 @@ export default function GuidePage() {
                   <div className="space-y-4">
                     <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-3">
                       <div className="w-7 h-7 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-xs shrink-0">
-                        ১
+                        {toBnDigits('1')}
                       </div>
                       <div className="text-xs">
                         <span className="font-bold text-white block">
@@ -282,7 +282,7 @@ export default function GuidePage() {
 
                     <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-3">
                       <div className="w-7 h-7 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-xs shrink-0">
-                        ২
+                        {toBnDigits('2')}
                       </div>
                       <div className="text-xs">
                         <span className="font-bold text-white block">
@@ -298,7 +298,7 @@ export default function GuidePage() {
 
                     <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-start gap-3">
                       <div className="w-7 h-7 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-xs shrink-0">
-                        ৩
+                        {toBnDigits('3')}
                       </div>
                       <div className="text-xs">
                         <span className="font-bold text-white block">
@@ -494,7 +494,7 @@ export default function GuidePage() {
                   <div className="space-y-4">
                     <div className="flex gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
                       <div className="w-8 h-8 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-xs shrink-0">
-                        ০১
+                        {toBnDigits('01')}
                       </div>
                       <div className="text-xs">
                         <span className="font-bold text-white block">
@@ -510,7 +510,7 @@ export default function GuidePage() {
 
                     <div className="flex gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
                       <div className="w-8 h-8 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-xs shrink-0">
-                        ০২
+                        {toBnDigits('02')}
                       </div>
                       <div className="text-xs">
                         <span className="font-bold text-white block">
@@ -526,7 +526,7 @@ export default function GuidePage() {
 
                     <div className="flex gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
                       <div className="w-8 h-8 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono font-bold text-xs shrink-0">
-                        ০৩
+                        {toBnDigits('03')}
                       </div>
                       <div className="text-xs">
                         <span className="font-bold text-white block">

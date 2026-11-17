@@ -229,6 +229,402 @@ export const CAR_TRANSLATIONS: Record<string, Record<Language, CarTranslation>> 
       },
     },
   },
+  'toyota-prado-txl': {
+    en: {
+      name: 'Toyota Land Cruiser Prado TX-L',
+      tagline: 'The undisputed king of Bangladesh highways and executive motorcades.',
+      category: 'Luxury SUV',
+      description:
+        'The definitive luxury SUV in Bangladesh. Equipped with full leather interior, Sunroof, Modellista aero kit, 360-degree bird-eye camera, and crawl control for extreme durability.',
+      features: [
+        'Modellista Aero Body Styling Package',
+        'KDSS Kinetic Dynamic Suspension System',
+        'Center Console Coolbox Refrigerator',
+        '360° Panoramic Surround View Camera & Sunroof',
+      ],
+      specs: {
+        powertrain: '2.8L 1GD-FTV Turbo Diesel 4WD',
+        range: '580 mi',
+      },
+    },
+    bn: {
+      name: 'টয়োটা ল্যান্ড ক্রুজার প্রাডো টিএক্স-এল',
+      tagline: 'বাংলাদেশের হাইওয়ে ও ভিআইপি প্রটোকলের অবিসংবাদিত রাজা।',
+      category: 'লাক্সারি এসইউভি',
+      description:
+        'বাংলাদেশের অন্যতম সম্মানজনক ও জনপ্রিয় লাক্সারি এসইউভি। এতে রয়েছে সানরুফ, মডেলিস্টা বডি কিট, ৩৬০ ডিগ্রি চারপাশের ভিউ ক্যামেরা এবং যেকোনো রাস্তায় চলার জন্য ক্রল কন্ট্রোল সুবিধা।',
+      features: [
+        'মডেলিস্টা অ্যারো বডি স্টাইলিং প্যাকেজ',
+        'কেডিএসএস (KDSS) কাইনেটিক ডায়নামিক সাসপেনশন',
+        'সেন্টার কনসোল রেফ্রিজারেটেড কুলবক্স',
+        '৩৬০° প্যানোরামিক ক্যামেরা ও ডুয়াল জোন ক্লাইমেট কনট্রোল',
+      ],
+      specs: {
+        powertrain: '২.৮ লিটার ১জিডি-এফটিভি টার্বো ডিজেল ৪x৪',
+        range: '৯৩৩ কিমি (৫৮০ মাইল)',
+      },
+    },
+  },
+  'toyota-harrier-progress': {
+    en: {
+      name: 'Toyota Harrier 2.0 Progress',
+      tagline: 'Sleek coupe-SUV silhouette with bespoke executive Japanese luxury.',
+      category: 'Luxury SUV',
+      description:
+        'A premier choice across Dhaka showrooms. Features electrochromic dimming panoramic glass roof, JBL 9-speaker premium acoustics, and ultra-smooth highway cruising.',
+      features: [
+        'Electrochromic Dimming Panorama Roof',
+        'JBL Studio Acoustic 9-Speaker Audio',
+        'Toyota Safety Sense 3.0 Telemetry Suite',
+        'Bespoke Saddle Brown & Black Nappa Leather',
+      ],
+      specs: {
+        powertrain: '2.0L Dynamic Force Direct-Shift CVT',
+        range: '520 mi',
+      },
+    },
+    bn: {
+      name: 'টয়োটা হ্যারিয়ার ২.০ প্রগ্রেস',
+      tagline: 'কুপ-এসইউভি স্টাইলিশ লুক এবং জাপানিজ এক্সিকিউটিভ লাক্সারি।',
+      category: 'লাক্সারি এসইউভি',
+      description:
+        'ঢাকা ও চট্টগ্রামের অটোমোবাইল বাজারে অত্যন্ত জনপ্রিয় প্রিমিয়াম এসইউভি। এতে রয়েছে ইলেকট্রোক্রোমিক সানরুফ, জেবিএল ৯-স্পিকার প্রিমিয়াম অডিও এবং আরামদায়ক স্মুথ ড্রাইভিং।',
+      features: [
+        'ইলেকট্রোক্রোমিক ডিমিং প্যানোরামা সানরুফ',
+        'জেবিএল (JBL) স্টুডিও ৯-স্পিকার অ্যাকোস্টিক সাউন্ড',
+        'টয়োটা সেফটি সেন্স ৩.০ অ্যাক্টিভ সুরক্ষাব্যবস্থা',
+        'বিস্পোক স্যাডল ব্রাউন ও ব্ল্যাক নাপ্পা লেদার সিট',
+      ],
+      specs: {
+        powertrain: '২.০ লিটার ডায়নামিক ফোর্স ডিরেক্ট-শিফট সিভিটি',
+        range: '৮৩৭ কিমি (৫২০ মাইল)',
+      },
+    },
+  },
+  'toyota-premio-f-ex': {
+    en: {
+      name: 'Toyota Premio F EX Package',
+      tagline: 'Bangladesh’s most prestigious and reliable luxury executive sedan.',
+      category: 'Sedan',
+      description:
+        'The timeless gold standard of the Bangladeshi car market. Renowned for incredible resale value, wooden interior trim, soft push-cushion seats, and zero-maintenance reliability.',
+      features: [
+        'Mahogany Woodgrain Executive Dashboard Trim',
+        'Smart Keyless Push Start & Nanoe-X Climate AC',
+        'Pre-Crash Safety System & Lane Departure Warning',
+        'Optitron Gauge Cluster with Multi-Info Telemetry',
+      ],
+      specs: {
+        powertrain: '1.5L 1NZ-FE VVT-i with Super CVT-i',
+        range: '600 mi',
+      },
+    },
+    bn: {
+      name: 'টয়োটা প্রিমিও এফ ইএক্স প্যাকেজ',
+      tagline: 'বাংলাদেশের সবচেয়ে জনপ্রিয়, নির্ভরযোগ্য ও সম্মানজনক এক্সিকিউটিভ সেডান।',
+      category: 'সেডান',
+      description:
+        'বাংলাদেশের গাড়ির বাজারের অবিসংবাদিত রত্ন। এর চোখ জুড়ানো কাঠের ড্যাশবোর্ড ট্রিম, প্রিমিয়াম কুশন সিট, নির্ভরযোগ্য ইঞ্জিন এবং দেশের সেরা রিসেল ভ্যালুর জন্য এটি অনন্য।',
+      features: [
+        'মেহগনি উডেন এক্সিকিউটিভ ড্যাশবোর্ড প্যানেল',
+        'স্মার্ট পুশ স্টার্ট ও ন্যানোই-এক্স (Nanoe-X) এসি সিস্টেম',
+        'প্রি-ক্র্যাশ সেফটি সিস্টেম ও লেন ডিপার্চার অ্যালার্ট',
+        'অপটিট্রন মাল্টি-ইনফো মিটার গেজ ক্লাস্টার',
+      ],
+      specs: {
+        powertrain: '১.৫ লিটার ভিভিটি-আই সুপার সিভিটি-আই ইঞ্জিন',
+        range: '৯৬৫ কিমি (৬০০ মাইল)',
+      },
+    },
+  },
+  'mercedes-s-class-s450': {
+    en: {
+      name: 'Mercedes-Benz S-Class S450 AMG',
+      tagline: 'The pinnacle of automotive prestige, chauffeur-driven VIP royalty.',
+      category: 'Executive Flagship',
+      description:
+        'The flagship status symbol for high-ranking VIPs in Dhaka and Chittagong. Features rear reclining First-Class Ottoman executive seats, Burmester 3D sound, and MBUX Augmented Reality HUD.',
+      features: [
+        'Executive Rear First-Class Ottoman Massage Suite',
+        'Burmester High-End 3D Surround Soundscape',
+        'MBUX Augmented Reality Head-Up Telemetry Display',
+        'Active Ambient Lighting with 64 Synchronized Tones',
+      ],
+      specs: {
+        powertrain: '3.0L Inline-6 Turbo with 48V EQ Boost AWD',
+        range: '540 mi',
+      },
+    },
+    bn: {
+      name: 'মার্সিডিজ-বেঞ্জ এস-ক্লাস এস৪৫০ এএমজি',
+      tagline: 'অটোমোটিভ আভিজাত্যের চূড়ান্ত প্রতীক, ভিআইপি রাজকীয় অভিজ্ঞতা।',
+      category: 'এক্সিকিউটিভ ফ্ল্যাগশিপ',
+      description:
+        'ঢাকার গুলশান ও বারিধারার শীর্ষ ব্যবসায়ী ও রাষ্ট্রীয় ভিআইপিদের পছন্দের তালিকার শীর্ষে। পেছনের রিক্লাইনিং ফার্স্ট-ক্লাস অটোমান সিট, বার্মেস্টার থ্রি-ডি সাউন্ড এবং অগমেন্টেড রিয়েলিটি হেড-আপ ডিসপ্লে।',
+      features: [
+        'পেছনের ভিআইপি ফার্স্ট-ক্লাস অটোমান ম্যাসাজ সিট',
+        'বার্মেস্টার হাই-এন্ড ৩ডি চারপাশের সাউন্ডস্কেপ',
+        'এমবিউএক্স (MBUX) অগমেন্টেড রিয়েলিটি হেড-আপ ডিসপ্লে',
+        '৬৪টি রঙের ডায়নামিক অ্যাক্টিভ অ্যাম্বিয়েন্ট লাইটিং',
+      ],
+      specs: {
+        powertrain: '৩.০ লিটার ইনলাইন-৬ টার্বো + ৪৮ভি ইকিউ বুস্ট এডাব্লিউডি',
+        range: '৮৬৯ কিমি (৫৪০ মাইল)',
+      },
+    },
+  },
+  'bmw-7-series-740li': {
+    en: {
+      name: 'BMW 7 Series 740Li M Sport',
+      tagline: 'Ultra-modern German statement with Theater Screen and iconic glow.',
+      category: 'Executive Flagship',
+      description:
+        'Dramatic road presence with illuminated Iconic Glow kidney grille, 31.3-inch 8K BMW Theatre Screen in the rear lounge, and automated comfort doors.',
+      features: [
+        '31.3-inch 8K Panoramic Rear Theatre Screen',
+        'Iconic Glow Illuminated Kidney Grille Array',
+        'Executive Lounge Seating with Door Touch Consoles',
+        'Bowers & Wilkins Diamond Surround Sound Audio',
+      ],
+      specs: {
+        powertrain: '3.0L TwinPower Turbo Inline-6 Mild Hybrid',
+        range: '560 mi',
+      },
+    },
+    bn: {
+      name: 'বিএমডব্লিউ ৭ সিরিজ ৭৪০এলআই এম স্পোর্ট',
+      tagline: 'আইকনিক গ্লো গ্রিল এবং পেছনের ৩১.৩ ইঞ্চি ৮কে থিয়েটার স্ক্রিনের জার্মান রাজসিকতা।',
+      category: 'এক্সিকিউটিভ ফ্ল্যাগশিপ',
+      description:
+        'সড়কে অভূতপূর্ব গাম্ভীর্য এনে দেওয়া ক্রিস্টাল হেডলাইট, পেছনের যাত্রীদের জন্য ৩১.৩ ইঞ্চি ৮K রেজোলিউশনের থিয়েটার স্ক্রিন এবং স্বয়ংক্রিয় সফট-ক্লোজ স্মার্ট ডোর।',
+      features: [
+        '৩১.৩ ইঞ্চি ৮K আল্ট্রা-ওয়াইড প্যানোরামিক রিয়ার থিয়েটার স্ক্রিন',
+        'আইকনিক গ্লো ইলুমিনেটেড কিডনি ফ্রন্ট গ্রিল',
+        'এক্সিকিউটিভ লাউঞ্জ সিটিং ও ডোর টাচ কন্ট্রোল কনসোল',
+        'বাওয়ার্স অ্যান্ড উইলকিন্স ডায়মন্ড সারাউন্ড অডিও',
+      ],
+      specs: {
+        powertrain: '৩.০ লিটার টুইনপাওয়ার টার্বো মাইল্ড হাইব্রিড',
+        range: '৯০১ কিমি (৫৬০ মাইল)',
+      },
+    },
+  },
+  'toyota-alphard-executive': {
+    en: {
+      name: 'Toyota Alphard Executive Lounge',
+      tagline: 'Private jet comfort on wheels. The ultimate luxury MPV in Bangladesh.',
+      category: 'Microbus & MPV',
+      description:
+        'Favored by dignitaries, celebrities, and top business tycoons in Bangladesh. Features aircraft-grade massage captain chairs, dual sunroofs, and noise-canceling acoustics.',
+      features: [
+        'Aircraft-Grade Ottoman Massage Captain Chairs',
+        'Dual Power Sliding Privacy Doors with Step Assist',
+        'JBL Theater Sound with Ceiling Rear Entertainment Screen',
+        'Super All-Speed Radar Dynamic Cruise Assist',
+      ],
+      specs: {
+        powertrain: '2.5L Hybrid E-Four All-Wheel Drive',
+        range: '550 mi',
+      },
+    },
+    bn: {
+      name: 'টয়োটা অ্যালফার্ড এক্সিকিউটিভ লাউঞ্জ',
+      tagline: 'চাকার ওপর প্রাইভেট জেটের রাজকীয় আরাম। বাংলাদেশের সেরা লাক্সারি এমপিভি।',
+      category: 'মাইক্রোবাস ও এমপিভি',
+      description:
+        'দেশের শীর্ষ কর্পোরেট ব্যক্তিত্ব এবং তারকাদের বহরের অবিচ্ছেদ্য অংশ। এতে রয়েছে বিমানের বিজনেস ক্লাসের মতো অটোমান ম্যাসাজ সিট, ডুয়াল সানরুফ এবং শব্দহীন আরামদায়ক ভ্রমণ।',
+      features: [
+        'বিমানের বিজনেস ক্লাস অটোমান ম্যাসাজ ক্যাপ্টেন সিট',
+        'ডুয়াল অটোমেটিক ইলেকট্রিক পাওয়ার স্লাইডিং ডোর',
+        'জেবিএল থিয়েটার সাউন্ড ও সিলিং এন্টারটেইনমেন্ট স্ক্রিন',
+        'অল-স্পিড রাডার ডায়নামিক ক্রুজ কনট্রোল ও প্রি-কলিশন সেফটি',
+      ],
+      specs: {
+        powertrain: '২.৫ লিটার হাইব্রিড ই-ফোর অল-হুইল ড্রাইভ',
+        range: '৮৮৫ কিমি (৫৫০ মাইল)',
+      },
+    },
+  },
+  'toyota-noah-hybrid-si': {
+    en: {
+      name: 'Toyota Noah Hybrid Si',
+      tagline: 'The quintessential family microbus with extraordinary fuel efficiency.',
+      category: 'Microbus & MPV',
+      description:
+        'One of the most popular and practical multi-purpose microbuses in Bangladesh. Perfect for family road trips or corporate commuting with super low-floor entry and dual sliding electric doors.',
+      features: [
+        'Dual Electric Sliding Doors with One-Touch Walk-In',
+        'Super Low-Floor Long Slide Captain Chairs',
+        '23.4 km/L Hybrid Synergy Fuel Economy Efficiency',
+        'Toyota Safety Sense Active Collision Mitigation',
+      ],
+      specs: {
+        powertrain: '1.8L 2ZR-FXE Hybrid Synergy Drive',
+        range: '650 mi',
+      },
+    },
+    bn: {
+      name: 'টয়োটা নোয়া হাইব্রিড এসআই',
+      tagline: 'অসাধারণ মাইলেজ ও প্রশস্ত ৭ সিটের পারফেক্ট ফ্যামিলি ও ট্যুর মাইক্রোবাস।',
+      category: 'মাইক্রোবাস ও এমপিভি',
+      description:
+        'বাংলাদেশের অন্যতম জনপ্রিয় এবং সর্বাধিক বিক্রিত ফ্যামিলি মাইক্রোবাস। পরিবার নিয়ে কক্সবাজার বা সিলেটে লং ট্যুরের জন্য প্রশস্ত সিটিং এবং লিটারে ২৩ কিমির বেশি দুর্দান্ত মাইলেজ।',
+      features: [
+        'ডুয়াল ওয়ান-টাচ ইলেকট্রিক স্লাইডিং ডোর',
+        'সুপার লো-ফ্লোর লং-স্লাইড আরামদায়ক ক্যাপ্টেন সিট',
+        'প্রতি লিটারে ২৩.৪ কিমি হাইব্রিড জ্বালানি সাশ্রয়িতা',
+        'টয়োটা সেফটি সেন্স ইমার্জেন্সি অটো ব্রেকিং',
+      ],
+      specs: {
+        powertrain: '১.৮ লিটার টু-জেডআর হাইব্রিড সিনার্জি ড্রাইভ',
+        range: '১,০৪৬ কিমি (৬৫০ মাইল)',
+      },
+    },
+  },
+  'tesla-model-y-longrange': {
+    en: {
+      name: 'Tesla Model Y Long Range',
+      tagline: 'Next-gen electric freedom with instant torque and minimal running cost.',
+      category: 'Electric Vehicle (EV)',
+      description:
+        'A rapidly growing electric sensation across Dhaka. Offers effortless home AC charging, zero maintenance engine oil requirements, expansive glass roof, and Autopilot safety suite.',
+      features: [
+        'Dual Motor All-Wheel Drive All-Weather Traction',
+        'Full Tinted Glass Panoramic Roof Canopy',
+        '15-inch Touchscreen Command & Navigation Center',
+        'Home Wall Connector & AC Fast Charging Support in Bangladesh',
+      ],
+      specs: {
+        powertrain: 'Dual-Motor All-Wheel Drive EV',
+        range: '330 mi',
+      },
+    },
+    bn: {
+      name: 'টেসলা মডেল ওয়াই লং রেঞ্জ',
+      tagline: 'ভবিষ্যতের ইলেকট্রিক স্বাধীনতা, তাৎক্ষণিক গতি এবং ন্যূনতম রক্ষণাবেক্ষণ খরচ।',
+      category: 'ইলেকট্রিক ভেহিকল (EV)',
+      description:
+        'ঢাকায় দ্রুত জনপ্রিয় হয়ে ওঠা প্রিমিয়াম ইলেকট্রিক এসইউভি। ঘরে বসেই চার্জ করার সুবিধা, ইঞ্জিন তেল বা ফুয়েল খরচের ঝামেলা নেই এবং পূর্ণ গ্লাস প্যানোরামিক ছাদযুক্ত।',
+      features: [
+        'ডুয়াল মোটর এডাব্লিউডি (AWD) নিখুঁত ব্যালান্স ও গ্রিপ',
+        'সম্পূর্ণ গ্লাস প্যানোরামিক ইউভি প্রটেক্টেড ছাদ',
+        '১৫ ইঞ্চি সেন্ট্রাল টাচস্ক্রিন ইনফোটেইনমেন্ট কনসোল',
+        'বাসায় ওয়াল-কানেক্টর ফাস্ট চার্জিং সমর্থন',
+      ],
+      specs: {
+        powertrain: 'ডুয়াল-মোটর অল-হুইল ড্রাইভ ইলেকট্রিক',
+        range: '৫৩১ কিমি (৩৩০ মাইল)',
+      },
+    },
+  },
+  'byd-seal-performance': {
+    en: {
+      name: 'BYD Seal Performance AWD',
+      tagline: 'Blade Battery safety meets 523 HP supercar acceleration.',
+      category: 'Electric Vehicle (EV)',
+      description:
+        'Officially sold in Bangladesh showrooms with skyrocketing demand. Features cell-to-body Blade Battery safety, rotating 15.6-inch infotainment, and blistering 0-100 km/h in 3.8 seconds.',
+      features: [
+        'Ultra-Safe Ultra-Durable CTB Blade Battery Pack',
+        'Rotating 15.6-inch DiLink Intelligent Touchscreen',
+        'Dynaudio 12-Speaker High-Fidelity Audio System',
+        'Crystal Electronic Gearshift & HUD Head-Up Display',
+      ],
+      specs: {
+        powertrain: 'Dual Motor Intelligent AWD Blade Battery',
+        range: '320 mi',
+      },
+    },
+    bn: {
+      name: 'বিওয়াইডি সিল পারফরম্যান্স এডাব্লিউডি',
+      tagline: 'অত্যাধুনিক ব্লেড ব্যাটারি সুরক্ষা ও ৫২৩ হর্সপাওয়ারের সুপারকার গতি।',
+      category: 'ইলেকট্রিক ভেহিকল (EV)',
+      description:
+        'বাংলাদেশে অফিসিয়ালি বাজারজাত হওয়া তুমুল জনপ্রিয় ইলেকট্রিক সেডান। সেল-টু-বডি ব্লেড ব্যাটারি সুরক্ষা, ঘুরন্ত ১৫.৬ ইঞ্চি স্ক্রিন এবং মাত্র ৩.৮ সেকেন্ডে ০-১০০ কিমি স্পিড তোলার ক্ষমতা।',
+      features: [
+        'বিশ্বখ্যাত অতি-নিরাপদ সিটিবি (CTB) ব্লেড ব্যাটারি প্রযুক্তি',
+        'ঘূর্ণনক্ষম ১৫.৬ ইঞ্চি ডিলিংক স্মার্ট টাচস্ক্রিন',
+        'ড্যানঅডিও (Dynaudio) ১২-স্পিকার প্রিমিয়াম সাউন্ড',
+        'ক্রিস্টাল ইলেকট্রনিক গিয়ার নব ও হেড-আপ ডিসপ্লে',
+      ],
+      specs: {
+        powertrain: 'ডুয়াল মোটর ইন্টেলিজেন্ট এডাব্লিউডি ব্লেড ব্যাটারি',
+        range: '৫১৫ কিমি (৩২০ মাইল)',
+      },
+    },
+  },
+  'toyota-hilux-revo-rocco': {
+    en: {
+      name: 'Toyota Hilux Revo Rocco 4x4',
+      tagline: 'Indestructible double-cabin dominance across highways and rough terrain.',
+      category: 'Double Cabin Pickup',
+      description:
+        'The most respected double-cabin pickup in Bangladesh. Engineered to tackle everything from mega-project construction sites to luxury highway cruising with aggressive Rocco styling.',
+      features: [
+        'Heavy-Duty Rocco Sports Bar & Black Alloy Trims',
+        'Automatic Rear Differential Lock (Diff-Lock)',
+        'High & Low Range 4WD Shift-on-the-Fly Dial',
+        'JBL Sound System & 8-inch Infotainment Display',
+      ],
+      specs: {
+        powertrain: '2.8L GD Turbo Diesel 4WD with Diff Lock',
+        range: '580 mi',
+      },
+    },
+    bn: {
+      name: 'টয়োটা হাইলাক্স রেভো রোকো ৪x৪',
+      tagline: 'অবিনশ্বর ডাবল-কেবিন পিকআপ, হাইওয়ে থেকে দুর্গম রাস্তা সর্বত্র একচ্ছত্র দাপট।',
+      category: 'পিকআপ ডাবল কেবিন',
+      description:
+        'বাংলাদেশের অন্যতম সম্মানজনক ও শক্তপোক্ত ডাবল-কেবিন ৪x৪ পিকআপ। মেঘা কনস্ট্রাকশন প্রজেক্ট থেকে শুরু করে পারিবারিক ট্যুর—সব পরিস্থিতিতে অত্যন্ত মজবুত ও নির্ভরযোগ্য।',
+      features: [
+        'হেভি-ডিউটি রোকো স্পোর্টস বার ও ব্ল্যাক অ্যালয় ট্রিম',
+        'অটোমেটিক রিয়ার ডিফারেনশিয়াল লক (ডিফ-লক)',
+        'হাই ও লো রেঞ্জ ফোর-হুইল ড্রাইভ রোটারি ডায়াল',
+        'জেবিএল সাউন্ড সিস্টেম ও প্রি-কলিশন সেফটি মনিটর',
+      ],
+      specs: {
+        powertrain: '২.৮ লিটার জিডি টার্বো ডিজেল ৪x৪ ডিফ-লক সহ',
+        range: '৯৩৩ কিমি (৫৮০ মাইল)',
+      },
+    },
+  },
+  'porsche-911-carrera-s': {
+    en: {
+      name: 'Porsche 911 Carrera S',
+      tagline: 'The definitive daily sports car. German engineering at its finest.',
+      category: 'Track Series',
+      description:
+        'The ultimate sports coupe choice for connoisseurs in Bangladesh. Features Sport Chrono package with launch control, active twin sports exhaust, and PASM adaptive dampers.',
+      features: [
+        'Sport Chrono Package with Steering Wheel Mode Switch',
+        'Porsche Active Suspension Management (PASM)',
+        'Dual Twin-Tube Active Sports Exhaust System',
+        'Bose High-End Surround Sound & Carbon Interior Appointments',
+      ],
+      specs: {
+        powertrain: '3.0L Twin-Turbo Flat-6 with 8-Speed PDK',
+        range: '420 mi',
+      },
+    },
+    bn: {
+      name: 'পোর্শে ৯১১ কারেরা এস',
+      tagline: 'জার্মান ইঞ্জিনিয়ারিংয়ের অনন্য সৃষ্টি, দৈনন্দিন ব্যবহারের সেরা স্পোর্টস কার।',
+      category: 'ট্র্যাক সিরিজ ও স্পোর্টস কার',
+      description:
+        'বাংলাদেশের স্পোর্টস কার প্রেমীদের কাছে পরম আকাঙ্ক্ষার গাড়ি। স্পোর্ট ক্রোনো প্যাকেজের সাথে রয়েছে স্টিয়ারিং মোড সুইচ, ডুয়াল স্পোর্টস একজস্ট এবং পিএএসএম (PASM) অ্যাডাপটিভ সাসপেনশন।',
+      features: [
+        'স্পোর্ট ক্রোনো প্যাকেজ ও স্টিয়ারিং লঞ্চ মোড সুইচ',
+        'পোর্শে অ্যাক্টিভ সাসপেনশন ম্যানেজমেন্ট (PASM)',
+        'ডুয়াল টুইন-টিউব অ্যাক্টিভ স্পোর্টস একজস্ট গর্জন',
+        'বোস হাই-এন্ড সারাউন্ড সাউন্ড ও কার্বন ফাইবার ইন্টেরিয়র',
+      ],
+      specs: {
+        powertrain: '৩.০ লিটার টুইন-টার্বো ফ্ল্যাট-সিক্স পিডিকে (PDK)',
+        range: '৬৭৫ কিমি (৪২০ মাইল)',
+      },
+    },
+  },
 };
 
 export const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {

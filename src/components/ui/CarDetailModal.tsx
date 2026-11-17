@@ -3,6 +3,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { InventoryCar } from '@/types';
+import { useLanguage } from '@/context/LanguageContext';
+import { formatBDT, DEFAULT_USD_TO_BDT_RATE } from '@/lib/financeUtils';
 import { X, CheckCircle, Zap, Shield, Gauge, Fuel, Calendar, DollarSign, ArrowRight } from 'lucide-react';
 
 interface CarDetailModalProps {
@@ -12,6 +14,7 @@ interface CarDetailModalProps {
 }
 
 export function CarDetailModal({ car, onClose, onOrderNow }: CarDetailModalProps) {
+  const { isBn, formatPrice } = useLanguage();
   if (!car) return null;
 
   return (
@@ -71,10 +74,15 @@ export function CarDetailModal({ car, onClose, onOrderNow }: CarDetailModalProps
             <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
               <div>
                 <span className="text-xs uppercase font-mono tracking-wider text-neutral-300">
-                  Acquisition Valuation
+                  {isBn ? 'গাড়ির মূল্য' : 'Acquisition Valuation'}
                 </span>
-                <div className="text-2xl sm:text-3xl font-black text-cyan-300 font-mono">
-                  {car.formattedPrice}
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <span className="text-2xl sm:text-3xl font-black text-cyan-300 font-mono">
+                    {formatPrice(car.price, 'USD')}
+                  </span>
+                  <span className="text-sm sm:text-base font-bold text-amber-400 font-mono">
+                    ≈ {formatPrice(car.price, 'BDT')} ({formatBDT(car.price, DEFAULT_USD_TO_BDT_RATE, true)})
+                  </span>
                 </div>
               </div>
               <span className="text-xs font-mono text-neutral-400 hidden sm:block">

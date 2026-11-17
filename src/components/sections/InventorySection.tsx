@@ -4,6 +4,9 @@ import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { INVENTORY_CARS } from '@/data/cars';
 import { InventoryCar } from '@/types';
+import { useCars } from '@/context/CarContext';
+import { useLanguage } from '@/context/LanguageContext';
+import { formatBDT, DEFAULT_USD_TO_BDT_RATE } from '@/lib/financeUtils';
 import { CarDetailModal } from '@/components/ui/CarDetailModal';
 import { Search, SlidersHorizontal, ArrowUpRight, Zap, Gauge, Flame, Check } from 'lucide-react';
 
@@ -12,16 +15,32 @@ interface InventorySectionProps {
 }
 
 export function InventorySection({ onSelectCarForTestDrive }: InventorySectionProps) {
+  const { cars } = useCars();
+  const { isBn, toBnDigits, formatPrice } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'hp-desc'>('featured');
   const [selectedModalCar, setSelectedModalCar] = useState<InventoryCar | null>(null);
 
-  const categories = ['All', 'Hypercar', 'Electric GT', 'Luxury SUV', 'Track Series'];
+  const categories = [
+    { id: 'All', label: isBn ? 'সকল গাড়ি' : 'All Fleet' },
+    { id: 'Sedan', label: isBn ? 'সেডান' : 'Sedan' },
+    { id: 'Luxury SUV', label: isBn ? 'লাক্সারি এসইউভি' : 'Luxury SUV' },
+    { id: 'Microbus & MPV', label: isBn ? 'মাইক্রোবাস ও এমপিভি' : 'Microbus & MPV' },
+    { id: 'Hatchback & Compact', label: isBn ? 'হ্যাচব্যাক' : 'Hatchback' },
+    { id: 'Hybrid & Eco', label: isBn ? 'হাইব্রিড' : 'Hybrid' },
+    { id: 'Electric Vehicle (EV)', label: isBn ? 'ইলেকট্রিক (EV)' : 'Electric (EV)' },
+    { id: 'Executive Flagship', label: isBn ? 'এক্সিকিউটিভ' : 'Executive Flagship' },
+    { id: 'Double Cabin Pickup', label: isBn ? 'পিকআপ ৪x৪' : 'Pickup & 4x4' },
+    { id: 'Hypercar', label: isBn ? 'হাইপারকার' : 'Hypercar' },
+    { id: 'Track Series', label: isBn ? 'ট্র্যাক সিরিজ' : 'Track Series' },
+  ];
+
+  const sourceCars = cars && cars.length > 0 ? cars : INVENTORY_CARS;
 
   // Filter and sort cars
   const filteredCars = useMemo(() => {
-    return INVENTORY_CARS.filter((car) => {
+    return sourceCars.filter((car) => {
       const matchesCategory = selectedCategory === 'All' || car.category === selectedCategory;
       const matchesSearch =
         car.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -34,7 +53,7 @@ export function InventorySection({ onSelectCarForTestDrive }: InventorySectionPr
       if (sortBy === 'hp-desc') return b.specs.horsepower - a.specs.horsepower;
       return 0; // featured/default
     });
-  }, [selectedCategory, searchQuery, sortBy]);
+  }, [sourceCars, selectedCategory, searchQuery, sortBy]);
 
   return (
     <section
@@ -92,18 +111,18 @@ export function InventorySection({ onSelectCarForTestDrive }: InventorySectionPr
           {/* Category Tabs */}
           <div className="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-none">
             {categories.map((cat) => {
-              const active = selectedCategory === cat;
+              const active = selectedCategory === cat.id;
               return (
                 <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
+                  key={cat.id}
+                  onClick={() => setSelectedCategory(cat.id)}
                   className={`px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                     active
                       ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/25 scale-105'
                       : 'bg-white/[0.04] text-neutral-400 hover:text-white hover:bg-white/[0.08] border border-white/5'
                   }`}
                 >
-                  {cat}
+                  {cat.label}
                 </button>
               );
             })}
@@ -227,11 +246,16 @@ export function InventorySection({ onSelectCarForTestDrive }: InventorySectionPr
               <div className="px-6 pb-6 pt-2 border-t border-white/5 flex items-center justify-between gap-3">
                 <div>
                   <span className="text-[10px] font-mono uppercase text-neutral-400 block">
-                    Starting From
+                    {isBn ? 'মূল্য শুরু' : 'Starting From'}
                   </span>
-                  <span className="text-lg font-black font-mono text-white tracking-tight">
-                    {car.formattedPrice}
-                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-base sm:text-lg font-black font-mono text-white tracking-tight">
+                      {formatPrice(car.price, 'USD')}
+                    </span>
+                    <span className="text-[11px] font-bold font-mono text-amber-400">
+                      ≈ {formatPrice(car.price, 'BDT')} ({formatBDT(car.price, DEFAULT_USD_TO_BDT_RATE, true)})
+                    </span>
+                  </div>
                 </div>
 
                 <div className="flex items-center gap-2">

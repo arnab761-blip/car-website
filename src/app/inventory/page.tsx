@@ -7,20 +7,27 @@ import { useCars } from '@/context/CarContext';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { useLanguage } from '@/context/LanguageContext';
+import { formatBDT, DEFAULT_USD_TO_BDT_RATE } from '@/lib/financeUtils';
 import { Search, ArrowUpRight, Zap, SlidersHorizontal, ShieldCheck, Sliders, RotateCcw } from 'lucide-react';
 
 export default function InventoryPage() {
   const { cars } = useCars();
-  const { t, isBn, toBnDigits, getTranslatedCar } = useLanguage();
+  const { t, isBn, toBnDigits, getTranslatedCar, formatPrice } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'hp-desc'>('featured');
 
   const categories = [
-    { id: 'All', label: isBn ? 'সকল গাড়ি' : 'All' },
-    { id: 'Hypercar', label: isBn ? 'হাইপারকার' : 'Hypercar' },
-    { id: 'Electric GT', label: isBn ? 'ইলেকট্রিক জিটি' : 'Electric GT' },
+    { id: 'All', label: isBn ? 'সকল গাড়ি' : 'All Fleet' },
+    { id: 'Sedan', label: isBn ? 'সেডান' : 'Sedan' },
     { id: 'Luxury SUV', label: isBn ? 'লাক্সারি এসইউভি' : 'Luxury SUV' },
+    { id: 'Microbus & MPV', label: isBn ? 'মাইক্রোবাস ও এমপিভি' : 'Microbus & MPV' },
+    { id: 'Hatchback & Compact', label: isBn ? 'হ্যাচব্যাক' : 'Hatchback' },
+    { id: 'Hybrid & Eco', label: isBn ? 'হাইব্রিড' : 'Hybrid' },
+    { id: 'Electric Vehicle (EV)', label: isBn ? 'ইলেকট্রিক (EV)' : 'Electric (EV)' },
+    { id: 'Executive Flagship', label: isBn ? 'এক্সিকিউটিভ' : 'Executive Flagship' },
+    { id: 'Double Cabin Pickup', label: isBn ? 'পিকআপ ৪x৪' : 'Pickup & 4x4' },
+    { id: 'Hypercar', label: isBn ? 'হাইপারকার' : 'Hypercar' },
     { id: 'Track Series', label: isBn ? 'ট্র্যাক সিরিজ' : 'Track Series' },
   ];
 
@@ -230,9 +237,14 @@ export default function InventoryPage() {
                     <span className="text-[10px] font-mono uppercase text-neutral-400 block">
                       {t('featuredStartingFrom', 'Acquisition Price')}
                     </span>
-                    <span className="text-base sm:text-lg font-black font-mono text-white tracking-tight">
-                      {isBn ? toBnDigits(car.formattedPrice) : car.formattedPrice}
-                    </span>
+                    <div className="flex flex-col">
+                      <span className="text-base sm:text-lg font-black font-mono text-white tracking-tight">
+                        {formatPrice(car.price, 'USD')}
+                      </span>
+                      <span className="text-[11px] font-bold font-mono text-amber-400">
+                        ≈ {formatPrice(car.price, 'BDT')} ({formatBDT(car.price, DEFAULT_USD_TO_BDT_RATE, true)})
+                      </span>
+                    </div>
                   </div>
 
                   <div className="flex items-center gap-2">

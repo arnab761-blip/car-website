@@ -31,9 +31,10 @@ import {
 import { useGarage } from '@/hooks/useGarage';
 import { useToast } from '@/context/ToastContext';
 import { useLanguage } from '@/context/LanguageContext';
+import { formatBDT, DEFAULT_USD_TO_BDT_RATE } from '@/lib/financeUtils';
 
 export function CarDetailClient({ id }: { id: string }) {
-  const { t, isBn, toBnDigits, getTranslatedCar } = useLanguage();
+  const { t, isBn, toBnDigits, getTranslatedCar, formatPrice } = useLanguage();
   const { getCarById, featuredModelUrl } = useCars();
   const rawCar = getCarById(id);
   const car = rawCar ? getTranslatedCar(rawCar) : null;
@@ -523,8 +524,16 @@ export function CarDetailClient({ id }: { id: string }) {
                 <span className="text-xs uppercase font-mono tracking-wider text-neutral-400">
                   {t('detailAcquisitionPrice', 'Acquisition Valuation')}
                 </span>
-                <div className="text-3xl font-black text-cyan-400 font-mono">
-                  {isBn ? toBnDigits(car.formattedPrice) : car.formattedPrice}
+                <div className="flex flex-wrap items-baseline gap-2 sm:gap-3">
+                  <span className="text-2xl sm:text-3xl font-black text-cyan-400 font-mono">
+                    {formatPrice(car.price, 'USD')}
+                  </span>
+                  <span className="text-base sm:text-xl font-bold text-amber-400 font-mono">
+                    ≈ {formatPrice(car.price, 'BDT')}
+                  </span>
+                  <span className="text-xs font-mono text-neutral-400">
+                    ({formatBDT(car.price, DEFAULT_USD_TO_BDT_RATE, true)})
+                  </span>
                 </div>
               </div>
               <span className="text-xs font-mono text-neutral-300">

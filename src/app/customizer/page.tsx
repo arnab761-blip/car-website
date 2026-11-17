@@ -48,9 +48,10 @@ import {
 import { useGarage } from '@/hooks/useGarage';
 import { useToast } from '@/context/ToastContext';
 import { useLanguage } from '@/context/LanguageContext';
+import { formatBDT, DEFAULT_USD_TO_BDT_RATE } from '@/lib/financeUtils';
 
 function CustomizerContent() {
-  const { t, isBn, toBnDigits, getTranslatedCar } = useLanguage();
+  const { t, isBn, toBnDigits, getTranslatedCar, formatPrice } = useLanguage();
   const searchParams = useSearchParams();
   const carQuery = searchParams.get('car') || '';
   const colorQuery = searchParams.get('color') || '';
@@ -396,8 +397,11 @@ function CustomizerContent() {
                     <span className="text-xs font-bold text-white block whitespace-nowrap">
                       {translatedC.name}
                     </span>
-                    <span className="text-[10px] font-mono text-neutral-400">
-                      {isBn ? toBnDigits(c.formattedPrice) : c.formattedPrice}
+                    <span className="text-[10px] font-mono text-cyan-300">
+                      {formatPrice(c.price, 'USD')}
+                    </span>
+                    <span className="text-[9px] font-mono text-amber-400 block">
+                      ≈ {formatPrice(c.price, 'BDT')}
                     </span>
                   </div>
 
@@ -1035,9 +1039,14 @@ function CustomizerContent() {
                   <span className="text-[10px] font-mono uppercase text-neutral-400 block">
                     {t('customizerBasePrice', 'Base Acquisition Valuation')}
                   </span>
-                  <span className="text-lg font-bold font-mono text-cyan-300">
-                    {isBn ? toBnDigits(activeCar.formattedPrice) : activeCar.formattedPrice}
-                  </span>
+                  <div className="flex flex-col sm:items-end">
+                    <span className="text-lg sm:text-xl font-bold font-mono text-cyan-300">
+                      {formatPrice(activeCar.price, 'USD')}
+                    </span>
+                    <span className="text-xs font-bold font-mono text-amber-400">
+                      ≈ {formatPrice(activeCar.price, 'BDT')} ({formatBDT(activeCar.price, DEFAULT_USD_TO_BDT_RATE, true)})
+                    </span>
+                  </div>
                 </div>
               </div>
 
